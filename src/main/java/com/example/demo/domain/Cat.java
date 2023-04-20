@@ -24,6 +24,23 @@ public class Cat {
 		super();
 	}
 
+	public Cat(String name, boolean hasWhiskers, boolean evil, int length) {
+		super();
+		this.hasWhiskers = hasWhiskers;
+		this.name = name;
+		this.evil = evil;
+		this.length = length;
+	}
+
+	public Cat(long id, String name, boolean hasWhiskers, boolean evil, int length) {
+		super();
+		this.id = id;
+		this.hasWhiskers = hasWhiskers;
+		this.name = name;
+		this.evil = evil;
+		this.length = length;
+	}
+
 	public boolean isHasWhiskers() {
 		return hasWhiskers;
 	}
