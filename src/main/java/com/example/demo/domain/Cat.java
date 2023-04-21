@@ -1,5 +1,7 @@
 package com.example.demo.domain;
 
+import java.util.Objects;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -79,6 +81,24 @@ public class Cat {
 
 	public void setId(long id) {
 		this.id = id;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(evil, hasWhiskers, id, length, name);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Cat other = (Cat) obj;
+		return evil == other.evil && hasWhiskers == other.hasWhiskers && id == other.id && length == other.length
+				&& Objects.equals(name, other.name);
 	}
 
 }

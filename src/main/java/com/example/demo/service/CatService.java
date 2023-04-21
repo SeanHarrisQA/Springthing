@@ -10,10 +10,10 @@ public interface CatService {
 
 	List<Cat> getAllCats();
 
-	Cat getCat(int index);
+	Cat getCat(long index);
 
-	Cat deleteCat(int id);
+	Cat deleteCat(long id);
 
-	Cat updateCat(int id, String name, Boolean hasWhiskers, Boolean evil, Integer length);
+	Cat updateCat(long id, String name, Boolean hasWhiskers, Boolean evil, Integer length);
 
 }

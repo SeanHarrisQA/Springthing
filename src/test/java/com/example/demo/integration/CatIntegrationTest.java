@@ -100,6 +100,7 @@ public class CatIntegrationTest {
 		RequestBuilder req = patch("/update/" + id).queryParam("name", "Moriarty").queryParam("hasWhiskers", "false")
 				.queryParam("evil", "false").queryParam("length", "10");
 		// This is a scuffed way to do it, req is better than reqScuffed
+		@SuppressWarnings("unused")
 		RequestBuilder reqScuffed = patch("/update/" + id + "?name=Moriarty&evil=false&hasWhiskers=false&length=10");
 
 		ResultMatcher checkStatus = status().isOk();

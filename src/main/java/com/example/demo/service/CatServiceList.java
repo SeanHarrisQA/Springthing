@@ -25,18 +25,18 @@ public class CatServiceList implements CatService {
 	}
 
 	@Override
-	public Cat getCat(int index) {
-		return this.cats.get(index);
+	public Cat getCat(long index) {
+		return this.cats.get((int) index);
 	}
 
-	@Override
-	public Cat deleteCat(int id) {
-		return this.cats.remove(id);
-	}
+//	@Override
+//	public Cat deleteCat(long id) {
+//		return this.cats.remove(id);
+//	}
 
 	@Override
-	public Cat updateCat(int id, String name, Boolean hasWhiskers, Boolean evil, Integer length) {
-		Cat catToChange = this.cats.get(id);
+	public Cat updateCat(long id, String name, Boolean hasWhiskers, Boolean evil, Integer length) {
+		Cat catToChange = this.cats.get((int) id);
 		if (name != null)
 			catToChange.setName(name);
 		if (hasWhiskers != null)
@@ -46,7 +46,13 @@ public class CatServiceList implements CatService {
 		if (length != null)
 			catToChange.setLength(length);
 
-		return this.cats.get(id);
+		return this.cats.get((int) id);
+	}
+
+	@Override
+	public Cat deleteCat(long id) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
